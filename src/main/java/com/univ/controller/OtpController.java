@@ -30,8 +30,14 @@ public class OtpController {
     	
     	String text = session.toString();
     	
+    	String otp = String.valueOf(new java.security.SecureRandom().nextInt(900000) + 100000);
+
+        session.setAttribute("otp", otp);
+        session.setAttribute("otpEmail", email);
+        session.setAttribute("otpTime", System.currentTimeMillis());
+    	
     	emailService.sendEmail(
-    		    email, text,
+    		    email, otp,
     		    "Your ShareTrade OTP"
     		   //, "<p>Your OTP is <b>" + otp + "</b>. It is valid for 5 minutes.</p>"
     		);
