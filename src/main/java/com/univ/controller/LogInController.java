@@ -317,7 +317,7 @@ public class LogInController {
         file.transferTo(serverfile);
 
         if (repo.save(u) != null) {
-        	ms.sendRegMail(email);
+        	//ms.sendRegMail(email);
             mv = new ModelAndView("index", "msg", "<font color=green>User Registered Successfully, You Can Login Now</font>");
         } else {
             mv = new ModelAndView("signup", "msg", "<font color=Red>User Already Exists / Could Not Register</font>");
