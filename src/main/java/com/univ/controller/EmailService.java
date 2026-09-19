@@ -12,11 +12,11 @@ import java.util.Map;
 @Service
 public class EmailService {
 
-    @Value("${bskPUA6Na5cIZdJ}")
-    private String apiKey;
+	 @Value("${brevo.api.key}")
+	    private String apiKey;
 
-    @Value("${solankiayush645@gmail.com}")
-    private String fromEmail;
+	    @Value("${mail.from}")
+	    private String fromEmail;
 
     private final RestClient client;
 
