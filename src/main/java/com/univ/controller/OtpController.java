@@ -19,13 +19,24 @@ public class OtpController {
     
     @Autowired
     private UserInfoRepo repo;
+    
+    @Autowired
+    private EmailService emailService;
 
     @PostMapping("/sendOtpFromJs")
     @ResponseBody
     public String sendOtpFromJs(@RequestParam("email") String email,
                                 HttpSession session) {
-
-        otpMailService.sendOtp(email, session); // calls your sender
+    	
+    	String text = session.toString();
+    	
+    	emailService.sendEmail(
+    		    email, text,
+    		    "Your ShareTrade OTP"
+    		   //, "<p>Your OTP is <b>" + otp + "</b>. It is valid for 5 minutes.</p>"
+    		);
+    	
+        //otpMailService.sendOtp(email, session); // calls your sender
         return "OTP_SENT";
     }
     
