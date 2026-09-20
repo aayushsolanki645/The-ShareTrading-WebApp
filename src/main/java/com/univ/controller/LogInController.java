@@ -276,7 +276,7 @@ public class LogInController {
         					stlst.add(transactions);
         				}
         			}
-        	    	System.out.println("stlst"+stlst.get(1));
+        	    	//System.out.println("stlst"+stlst.get(1));
         	    	m.addAttribute("stlst",stlst);
         	        return "home";
         			}
