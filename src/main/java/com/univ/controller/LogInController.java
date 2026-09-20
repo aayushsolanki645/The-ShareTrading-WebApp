@@ -258,7 +258,7 @@ public class LogInController {
         		else {
         			List<Transactions> stlst = new ArrayList<Transactions>();
         	    	List<Transactions> tlst = trepo.findAll();
-        	    	System.out.println("tlst"+tlst.get(1));
+        	    	//System.out.println("tlst"+tlst.get(1));
         	    	
         	    	int stc = (int) strepo.count();
         	    	m.addAttribute("stc",stc);
