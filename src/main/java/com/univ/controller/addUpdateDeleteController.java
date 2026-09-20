@@ -214,8 +214,8 @@ public class addUpdateDeleteController {
     		}
     		
     		if(strepo.save(existingStock) != null  && trepo.save(tt) != null) {
-    			otpMailService.sendSellMail((String)session.getAttribute("username"),
-    					existingStock);
+    		//	otpMailService.sendSellMail((String)session.getAttribute("username"),
+    			//		existingStock);
     			return mv.addObject("msg","Sold Success");
     		}
     		else
@@ -245,7 +245,7 @@ public class addUpdateDeleteController {
         UserInfo existingUser = di.getUserById(uid);
         
         if(existingUser.getStatus().equalsIgnoreCase(status) == false) {
-        	otpMailService.sendConfirmationMail(email);
+        	//otpMailService.sendConfirmationMail(email);
         }
 
         if (existingUser != null) {

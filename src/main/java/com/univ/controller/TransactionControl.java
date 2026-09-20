@@ -258,7 +258,7 @@ public class TransactionControl {
     		System.out.println(t2.getCurrTotal()-(st.getRate()*t.getQuantity()));
     		tt.setCurrTotal(t2.getCurrTotal()-(st.getRate()*t.getQuantity()));
     		if(strepo.save(st) != null && crepo.save(t) != null && trepo.save(tt) != null) {
-    			otpMailService.sendPurchaseMail((String)session.getAttribute("username"), st);
+    			//otpMailService.sendPurchaseMail((String)session.getAttribute("username"), st);
     			return "cart";
     		}
     			
